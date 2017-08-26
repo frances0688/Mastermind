@@ -28,9 +28,9 @@ function getRandom(items) {
 
 function numberOfChoices(difficultyLevel, items) {
 	if (difficultyLevel <= 5) {
-		return _.chunk(items, 6);
+		return _.chunk(items, 6)[0];
 	} else if (difficultyLevel == 6 || difficultyLevel == 7) {
-		return _.chunk(items, 8);
+		return _.chunk(items, 8)[0];
 	} else {
 		return items;
 	}
