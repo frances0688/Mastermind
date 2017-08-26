@@ -1,4 +1,16 @@
-var colors = ["red", "blue", "yellow", "green", "orange", "purple"];
+var colors = [
+	"red",
+	"blue",
+	"yellow",
+	"green",
+	"orange",
+	"purple",
+	"white",
+	"black",
+	"gold",
+	"silver"
+];
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var difficultyLevel = 4;
 
@@ -10,14 +22,25 @@ $(document).ready(function() {
 	masterCodeGenerator(difficultyLevel, colors);
 });
 
-function getRandomColor(items) {
+function getRandom(items) {
 	return Math.floor(Math.random() * items.length);
+}
+
+function numberOfChoices(difficultyLevel, items) {
+	if (difficultyLevel <= 5) {
+		return _.chunk(items, 6);
+	} else if (difficultyLevel == 6 || difficultyLevel == 7) {
+		return _.chunk(items, 8);
+	} else {
+		return items;
+	}
 }
 
 function masterCodeGenerator(difficultyLevel, items) {
 	masterCode = [];
+	items = numberOfChoices(difficultyLevel, items);
 	for (i = 0; i < difficultyLevel; i++) {
-		masterCode.push(items[getRandomColor(items)]);
+		masterCode.push(items[getRandom(items)]);
 	}
 }
 
