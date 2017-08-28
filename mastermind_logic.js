@@ -12,6 +12,19 @@ var colors = [
 ];
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+var cats = [
+	"cat1",
+	"cat2",
+	"cat3",
+	"cat4",
+	"cat5",
+	"cat6",
+	"cat7",
+	"cat8",
+	"cat9",
+	"cat10"
+];
+
 var difficultyLevel = 4;
 
 var masterCode = [];
@@ -70,3 +83,12 @@ function winGame(masterCode, userChoices) {
 		console.log("You Won, betch!");
 	}
 }
+
+var ball = {
+	color: "red",
+	checked: false
+};
+
+var masterCode = ["red", "blue", "purple", "red"];
+
+var temp = [null, "blue", "purple", "red"];

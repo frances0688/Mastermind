@@ -1,0 +1,29 @@
+.classic {
+	background-image: url("img/sand.jpg");
+	background-size: cover;
+}
+
+#game-board {
+	width: auto;
+	height: 100%;
+	box-sizing: border-box;
+	border-radius: 20px;
+	background-image: url('img/wood.jpg');
+	padding: 30px;
+	margin-left: 20%;
+}
+
+#mastercode {
+	align-content: center;
+}
+
+.space {
+	opacity: 0.6;
+	width: 75px;
+	margin: 0;
+}
+
+.pegspace {
+	opacity: 0.6;
+	width: 25px;
+}
