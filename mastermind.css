@@ -1,20 +1,52 @@
+h1 {
+	font-size: 100px;
+	text-align: center;
+}
+
+ul {
+	float: right;
+	list-style: none;
+}
+
+button {
+	width: 200px;
+	border-radius: 15px;
+	font-size: 30px;
+	margin-bottom: 50px;
+	padding: 10px;
+}
+
+.classic-btn {
+	border: 3px solid #674620;
+	background-color: #d9d1c7;
+}
+
+.numbers-btn {
+	border: 3px solid magenta;
+	background-color: #3becb1;
+}
+
+.cats-btn {
+	border: 3px solid white;
+	background-color: green;
+}
+
 .classic {
 	background-image: url("img/sand.jpg");
 	background-size: cover;
 }
 
-#game-board {
+.game-board {
 	width: auto;
-	height: 100%;
-	box-sizing: border-box;
+	height: auto;
 	border-radius: 20px;
 	background-image: url('img/wood.jpg');
 	padding: 30px;
-	margin-left: 20%;
+	margin: 0 0 25px 10%;
 }
 
 #mastercode {
-	align-content: center;
+	border-bottom: 5px solid black;
 }
 
 .space {
@@ -26,4 +58,76 @@
 .pegspace {
 	opacity: 0.6;
 	width: 25px;
+}
+
+.choices-board {
+	padding: 15px;
+	height: 50px;
+	width: fit-content;
+}
+
+.choices {
+	margin: 0 7px;
+	background-color: transparent;
+	border: none;
+	background-image: url("img/spheres.png");
+	background-repeat: no-repeat;
+	background-size: 200px;
+}
+
+.red-sphere {
+	height: 50px;
+	width: 50px;
+	background-position: -75px -208px;
+}
+
+.blue-sphere {
+	height: 50px;
+	width: 50px;
+	background-position: -8px -8px;
+}
+
+.yellow-sphere {
+	height: 50px;
+	width: 50px;
+	background-position: -9px -75px;
+}
+.green-sphere {
+	height: 50px;
+	width: 50px;
+	background-position: -142px -142px;
+}
+.orange-sphere {
+	height: 50px;
+	width: 50px;
+	background-position: -75px -142px;
+}
+.purple-sphere {
+	height: 50px;
+	width: 50px;
+	background-position: -9px -142px;
+}
+.magenta-sphere {
+	height: 50px;
+	width: 50px;
+	background-position: -75px -75px;
+	display: none;
+}
+.cyan-sphere {
+	height: 50px;
+	width: 50px;
+	background-position: -142px -10px;
+	display: none;
+}
+.white-sphere {
+	height: 50px;
+	width: 50px;
+	background-position: -75px -10px;
+	display: none;
+}
+.black-sphere {
+	height: 50px;
+	width: 50px;
+	background-position: -142px -75px;
+	display: none;
 }

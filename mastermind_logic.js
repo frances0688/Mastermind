@@ -5,10 +5,10 @@ var colors = [
 	"green",
 	"orange",
 	"purple",
+	"magenta",
+	"cyan",
 	"white",
-	"black",
-	"gold",
-	"silver"
+	"black"
 ];
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -83,12 +83,3 @@ function winGame(masterCode, userChoices) {
 		console.log("You Won, betch!");
 	}
 }
-
-var ball = {
-	color: "red",
-	checked: false
-};
-
-var masterCode = ["red", "blue", "purple", "red"];
-
-var temp = [null, "blue", "purple", "red"];

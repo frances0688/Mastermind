@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <title>Mastermind</title>
   </head>
-  <body class = "classic" "numbers" "cat-tastic">
+  <body class = "classic">
     <h1> MasterMind</h1>
-  
-    <table id = "game-board">
-      <thead id = "mastercode">
-        <tr>
+    <ul>
+      <li><button class="classic-btn">Classic</button></li>
+      <li><button class="numbers-btn">Numbers</button></li>
+      <li><button class="cats-btn">CAT-tastic!</button></li>
+    </ul>
+    <table class = "game-board">
+      <thead>
+        <tr id = "mastercode">
           <td><img class = "space" src="img/black circle.png"></td>
           <td><img class = "space" src="img/black circle.png"></td>
           <td><img class = "space" src="img/black circle.png"></td>
@@ -200,8 +204,17 @@
         </tr>
       </tbody>
     </table>
-    <section>
-
+    <section class="game-board choices-board">
+      <button class = "choices red-sphere"></button>
+      <button class = "choices blue-sphere"></button>
+      <button class = "choices yellow-sphere"></button>
+      <button class = "choices green-sphere"></button>
+      <button class = "choices orange-sphere"></button>
+      <button class = "choices purple-sphere"></button>
+      <button class = "choices magenta-sphere"></button>
+      <button class = "choices cyan-sphere"></button>
+      <button class = "choices white-sphere"></button>
+      <button class = "choices black-sphere"></button>
     </section>
     <script src="jquery-2.1.3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.js"></script>
