@@ -1,34 +1,73 @@
+/*font-family: 'Amatic SC', cursive;
+font-family: 'Poiret One', cursive;
+font-family: 'Orbitron', sans-serif;*/
+
+html,
+button {
+	font-family: 'Amatic SC', cursive;
+	font-size: 30px;
+}
+
 h1 {
 	font-size: 100px;
 	text-align: center;
 }
 
+.difficulty {
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+content {
+	display: flex;
+	justify-content: center;
+}
+
+.boards {
+	flex-direction: column;
+	margin-bottom: 6%;
+}
+
 ul {
-	float: right;
+	display: flex;
+	flex-direction: column;
+	order: 2;
 	list-style: none;
+	margin-left: 5%;
 }
 
 button {
+	cursor: pointer;
+}
+
+.btn {
 	width: 200px;
+	height: 100px;
 	border-radius: 15px;
-	font-size: 30px;
+	font-weight: bold;
 	margin-bottom: 50px;
 	padding: 10px;
+	margin-right: 10%;
 }
 
-.classic-btn {
+#classic-btn {
 	border: 3px solid #674620;
 	background-color: #d9d1c7;
+	font-size: 50px;
 }
 
-.numbers-btn {
+#numbers-btn {
 	border: 3px solid magenta;
 	background-color: #3becb1;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 35px;
 }
 
-.cats-btn {
+#cats-btn {
 	border: 3px solid white;
 	background-color: green;
+	font-family: 'Poiret One', cursive;
+	font-size: 35px;
 }
 
 .classic {
@@ -37,16 +76,13 @@ button {
 }
 
 .game-board {
-	width: auto;
-	height: auto;
+	width: fit-content;
 	border-radius: 20px;
 	background-image: url('img/wood.jpg');
-	padding: 30px;
-	margin: 0 0 25px 10%;
 }
 
-#mastercode {
-	border-bottom: 5px solid black;
+#main-game {
+	padding: 25px;
 }
 
 .space {
@@ -60,74 +96,104 @@ button {
 	width: 25px;
 }
 
-.choices-board {
+#choices-board {
 	padding: 15px;
-	height: 50px;
-	width: fit-content;
+	position: fixed;
+	bottom: 0;
 }
 
 .choices {
 	margin: 0 7px;
 	background-color: transparent;
 	border: none;
-	background-image: url("img/spheres.png");
+	background-image: url("img/spheres-spritesheet.png");
 	background-repeat: no-repeat;
 	background-size: 200px;
 }
 
-.red-sphere {
+#red-sphere {
 	height: 50px;
 	width: 50px;
-	background-position: -75px -208px;
+	background-position: -78px -210px;
+	outline: 0;
+	border: 2px solid white;
+	border-radius: 50%;
 }
 
-.blue-sphere {
+#blue-sphere {
 	height: 50px;
 	width: 50px;
-	background-position: -8px -8px;
+	background-position: -10px -11px;
+	outline: 0;
+	border: 2px solid white;
+	border-radius: 50%;
 }
 
-.yellow-sphere {
+#yellow-sphere {
 	height: 50px;
 	width: 50px;
-	background-position: -9px -75px;
+	background-position: -10px -77px;
+	outline: 0;
+	border: 2px solid white;
+	border-radius: 50%;
 }
-.green-sphere {
+#green-sphere {
 	height: 50px;
 	width: 50px;
-	background-position: -142px -142px;
+	background-position: -144px -144px;
+	outline: 0;
+	border: 2px solid white;
+	border-radius: 50%;
 }
-.orange-sphere {
+#orange-sphere {
 	height: 50px;
 	width: 50px;
-	background-position: -75px -142px;
+	background-position: -77px -144px;
+	outline: 0;
+	border: 2px solid white;
+	border-radius: 50%;
 }
-.purple-sphere {
+#purple-sphere {
 	height: 50px;
 	width: 50px;
-	background-position: -9px -142px;
+	background-position: -10px -144px;
+	outline: 0;
+	border: 2px solid white;
+	border-radius: 50%;
 }
-.magenta-sphere {
+#magenta-sphere {
 	height: 50px;
 	width: 50px;
-	background-position: -75px -75px;
+	background-position: -77px -77px;
+	outline: 0;
+	border: 2px solid white;
+	border-radius: 50%;
 	display: none;
 }
-.cyan-sphere {
+#cyan-sphere {
 	height: 50px;
 	width: 50px;
-	background-position: -142px -10px;
+	background-position: -144px -10px;
+	outline: 0;
+	border: 2px solid white;
+	border-radius: 50%;
 	display: none;
 }
-.white-sphere {
+#white-sphere {
 	height: 50px;
 	width: 50px;
-	background-position: -75px -10px;
+	background-position: -77px -10px;
+	outline: 0;
+	border: 2px solid white;
+	border-radius: 50%;
 	display: none;
 }
-.black-sphere {
+#black-sphere {
 	height: 50px;
 	width: 50px;
-	background-position: -142px -75px;
+	background-position: -144px -77px;
+	outline: 0;
+	border: 2px solid white;
+	border-radius: 50%;
 	display: none;
 }

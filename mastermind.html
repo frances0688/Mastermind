@@ -2,222 +2,240 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="mastermind.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Orbitron|Poiret+One" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Mastermind</title>
   </head>
   <body class = "classic">
-    <h1> MasterMind</h1>
-    <ul>
-      <li><button class="classic-btn">Classic</button></li>
-      <li><button class="numbers-btn">Numbers</button></li>
-      <li><button class="cats-btn">CAT-tastic!</button></li>
-    </ul>
-    <table class = "game-board">
-      <thead>
-        <tr id = "mastercode">
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td>
-            <table>
-              <tbody>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td>
-            <table>
-              <tbody>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td>
-            <table>
-              <tbody>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td>
-            <table>
-              <tbody>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td>
-            <table>
-              <tbody>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td>
-            <table>
-              <tbody>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td>
-            <table>
-              <tbody>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td>
-            <table>
-              <tbody>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td>
-            <table>
-              <tbody>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td><img class = "space" src="img/black circle.png"></td>
-          <td>
-            <table>
-              <tbody>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-                <tr>
-                  <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <section class="game-board choices-board">
-      <button class = "choices red-sphere"></button>
-      <button class = "choices blue-sphere"></button>
-      <button class = "choices yellow-sphere"></button>
-      <button class = "choices green-sphere"></button>
-      <button class = "choices orange-sphere"></button>
-      <button class = "choices purple-sphere"></button>
-      <button class = "choices magenta-sphere"></button>
-      <button class = "choices cyan-sphere"></button>
-      <button class = "choices white-sphere"></button>
-      <button class = "choices black-sphere"></button>
-    </section>
+    <header>
+      <h1> MasterMind</h1>
+        <div class="difficulty">
+          Choose your difficulty level:
+          <button id = "four">4</button>
+          <button id = "five">5</button>
+          <button id = "six">6</button>
+          <button id = "seven">7</button>
+          <button id = "eight">8</button>
+          <button id = "nine">9</button>
+          <button id = "ten">10</button>
+        </div>
+    </header>
+    <content>
+      <ul>
+        <li><button class="btn" id = "classic-btn">Classic</button></li>
+        <li><button class="btn" id = "numbers-btn">Numbers</button></li>
+        <li><button class="btn" id = "cats-btn">CAT-tastic!</button></li>
+      </ul>
+      <div class = "boards">
+        <table class = "game-board" id = "main-game">
+          <thead>
+            <tr id = "mastercode">
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td><img class = "space" src="img/black circle.png"></td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                    <tr>
+                      <td><img class = "pegspace" src="img/black circle.png"><img class = "pegspace" src="img/black circle.png"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <section class="game-board" id = "choices-board">
+          <button class = "choices" id = "red-sphere"></button>
+          <button class = "choices" id = "blue-sphere"></button>
+          <button class = "choices" id = "yellow-sphere"></button>
+          <button class = "choices" id = "green-sphere"></button>
+          <button class = "choices" id = "orange-sphere"></button>
+          <button class = "choices" id = "purple-sphere"></button>
+          <button class = "choices" id = "magenta-sphere"></button>
+          <button class = "choices" id = "cyan-sphere"></button>
+          <button class = "choices" id = "white-sphere"></button>
+          <button class = "choices" id = "black-sphere"></button>
+        </section>
+      </div>
+    </content>
     <script src="jquery-2.1.3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.js"></script>
     <script src="mastermind_logic.js"></script>
+    <script src="mastermind.js"></script>
   </body>
 </html>
