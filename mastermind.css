@@ -26,6 +26,7 @@ content {
 .boards {
 	flex-direction: column;
 	margin-bottom: 6%;
+	font-size: 0;
 }
 
 ul {
@@ -38,16 +39,17 @@ ul {
 
 button {
 	cursor: pointer;
+	outline: 0;
 }
 
 .btn {
 	width: 200px;
-	height: 100px;
+	height: 75px;
 	border-radius: 15px;
 	font-weight: bold;
 	margin-bottom: 50px;
-	padding: 10px;
 	margin-right: 10%;
+	align-content: center;
 }
 
 #classic-btn {
@@ -85,15 +87,9 @@ button {
 	padding: 25px;
 }
 
-.space {
-	opacity: 0.6;
-	width: 75px;
-	margin: 0;
-}
-
 .pegspace {
 	opacity: 0.6;
-	width: 25px;
+	width: 15px;
 }
 
 #choices-board {
@@ -109,89 +105,78 @@ button {
 	background-image: url("img/spheres-spritesheet.png");
 	background-repeat: no-repeat;
 	background-size: 200px;
+	height: 50px;
+	width: 50px;
+	outline: 0;
+	border: 2px solid white;
+	border-radius: 50%;
 }
 
+.space {
+	background-color: transparent;
+	border: none;
+	background-image: url("img/black circle.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	opacity: 0.6;
+	width: 50px;
+	height: 50px;
+}
+
+.space.filled {
+	background-image: url("img/spheres-spritesheet.png");
+	background-size: 200px;
+	opacity: 1;
+}
+
+.space.red,
 #red-sphere {
-	height: 50px;
-	width: 50px;
 	background-position: -78px -210px;
-	outline: 0;
-	border: 2px solid white;
-	border-radius: 50%;
 }
 
+.space.blue,
 #blue-sphere {
-	height: 50px;
-	width: 50px;
 	background-position: -10px -11px;
-	outline: 0;
-	border: 2px solid white;
-	border-radius: 50%;
 }
 
+.space.yellow,
 #yellow-sphere {
-	height: 50px;
-	width: 50px;
 	background-position: -10px -77px;
-	outline: 0;
-	border: 2px solid white;
-	border-radius: 50%;
 }
+
+.space.green,
 #green-sphere {
-	height: 50px;
-	width: 50px;
 	background-position: -144px -144px;
-	outline: 0;
-	border: 2px solid white;
-	border-radius: 50%;
 }
+
+.space.orange,
 #orange-sphere {
-	height: 50px;
-	width: 50px;
 	background-position: -77px -144px;
-	outline: 0;
-	border: 2px solid white;
-	border-radius: 50%;
 }
+
+.space.purple,
 #purple-sphere {
-	height: 50px;
-	width: 50px;
 	background-position: -10px -144px;
-	outline: 0;
-	border: 2px solid white;
-	border-radius: 50%;
 }
+
+.space.magenta,
 #magenta-sphere {
-	height: 50px;
-	width: 50px;
 	background-position: -77px -77px;
-	outline: 0;
-	border: 2px solid white;
-	border-radius: 50%;
 }
+
+.space.cyan,
 #cyan-sphere {
-	height: 50px;
-	width: 50px;
 	background-position: -144px -10px;
-	outline: 0;
-	border: 2px solid white;
-	border-radius: 50%;
 }
+
+.space.white,
 #white-sphere {
-	height: 50px;
-	width: 50px;
 	background-position: -77px -10px;
-	outline: 0;
-	border: 2px solid white;
-	border-radius: 50%;
 }
+
+.space.black,
 #black-sphere {
-	height: 50px;
-	width: 50px;
 	background-position: -144px -77px;
-	outline: 0;
-	border: 2px solid white;
-	border-radius: 50%;
 }
 
 .next-level,
