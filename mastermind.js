@@ -1,3 +1,4 @@
+//Expands game board according to difficulty level
 var insertPegFirstRow = true;
 
 $(".difficulty > button").click(function(event) {
@@ -35,4 +36,18 @@ $(".difficulty > button").click(function(event) {
 		}
 	}
 	difficultyLevel = futureLevel;
+});
+
+// Expands amount of elements to choose from according to difficulty level
+$(".next-level-btn").click(function() {
+	$(".next-level").css("display", "inline");
+	$(".last-level").css("display", "none");
+});
+
+$(".last-level-btn").click(function() {
+	$(".next-level, .last-level").css("display", "inline");
+});
+
+$(".default-level-btn").click(function() {
+	$(".next-level, .last-level").css("display", "none");
 });

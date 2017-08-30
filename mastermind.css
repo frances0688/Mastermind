@@ -4,7 +4,7 @@ font-family: 'Orbitron', sans-serif;*/
 
 html,
 button {
-	font-family: 'Amatic SC', cursive;
+	font-family: "Amatic SC", cursive;
 	font-size: 30px;
 }
 
@@ -59,14 +59,14 @@ button {
 #numbers-btn {
 	border: 3px solid magenta;
 	background-color: #3becb1;
-	font-family: 'Orbitron', sans-serif;
+	font-family: "Orbitron", sans-serif;
 	font-size: 35px;
 }
 
 #cats-btn {
 	border: 3px solid white;
 	background-color: green;
-	font-family: 'Poiret One', cursive;
+	font-family: "Poiret One", cursive;
 	font-size: 35px;
 }
 
@@ -78,7 +78,7 @@ button {
 .game-board {
 	width: fit-content;
 	border-radius: 20px;
-	background-image: url('img/wood.jpg');
+	background-image: url("img/wood.jpg");
 }
 
 #main-game {
@@ -168,7 +168,6 @@ button {
 	outline: 0;
 	border: 2px solid white;
 	border-radius: 50%;
-	display: none;
 }
 #cyan-sphere {
 	height: 50px;
@@ -177,7 +176,6 @@ button {
 	outline: 0;
 	border: 2px solid white;
 	border-radius: 50%;
-	display: none;
 }
 #white-sphere {
 	height: 50px;
@@ -186,7 +184,6 @@ button {
 	outline: 0;
 	border: 2px solid white;
 	border-radius: 50%;
-	display: none;
 }
 #black-sphere {
 	height: 50px;
@@ -195,5 +192,9 @@ button {
 	outline: 0;
 	border: 2px solid white;
 	border-radius: 50%;
+}
+
+.next-level,
+.last-level {
 	display: none;
 }
