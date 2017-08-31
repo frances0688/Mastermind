@@ -64,19 +64,22 @@ $("td").on("click", function() {
 	element.addClass("filled " + colorPicked);
 	userChoices[position] = colorPicked;
 	if (userChoices.length == difficultyLevel) {
-		var pegsArray = compareCodes(masterCode, userChoices);
-		pegsArray.forEach(function(pegColor) {
-			if (pegColor === "blackPeg") {
-				$(".pegspace")
-					.css("background-image", "none")
-					.addClass("pegColorBlack");
-			} else if (pegColor === "whitePeg") {
-				$(".pegspace")
-					.css("background-image", "none")
-					.addClass("pegColorWhite");
-			} else {
-				return;
-			}
+		document.getElementById("checkBtn").disabled = false;
+		$("#checkBtn").click(function() {
+			var pegsArray = compareCodes(masterCode, userChoices);
+			pegsArray.forEach(function(pegColor) {
+				if (pegColor === "blackPeg") {
+					$(".pegspace")
+						.css("background-image", "none")
+						.addClass("pegColorBlack");
+				} else if (pegColor === "whitePeg") {
+					$(".pegspace")
+						.css("background-image", "none")
+						.addClass("pegColorWhite");
+				} else {
+					return;
+				}
+			});
 		});
 	}
 });

@@ -32,6 +32,7 @@ var userChoices = [];
 // Default game status
 $(document).ready(function() {
 	masterCodeGenerator(difficultyLevel, colors);
+	document.getElementById("checkBtn").disabled = true;
 });
 
 function getRandom(items) {
