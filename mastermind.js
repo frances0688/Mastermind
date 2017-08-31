@@ -14,14 +14,10 @@ $(".difficulty > button").click(function(event) {
 				"#main-game > tbody > tr > td:nth-child(" + difficultyLevel + ")"
 			);
 			if (insertPegFirstRow) {
-				$(".firstRowPeg").append(
-					'<img class = "pegspace" src="img/black circle.png">'
-				);
+				$(".firstRowPeg").append('<div class = "pegspace"></div>');
 				insertPegFirstRow = false;
 			} else {
-				$(".secondRowPeg").append(
-					'<img class = "pegspace" src="img/black circle.png">'
-				);
+				$(".secondRowPeg").append('<div class = "pegspace"></div>');
 				insertPegFirstRow = true;
 			}
 		}
@@ -29,10 +25,10 @@ $(".difficulty > button").click(function(event) {
 		for (i = newColumns; i < 0; i++) {
 			$("#main-game > tbody > tr > td").remove(":nth-child(1)");
 			if (insertPegFirstRow) {
-				$(".secondRowPeg>img").remove(":nth-child(1)");
+				$(".secondRowPeg>div").remove(":nth-child(1)");
 				insertPegFirstRow = false;
 			} else {
-				$(".firstRowPeg>img").remove(":nth-child(1)");
+				$(".firstRowPeg>div").remove(":nth-child(1)");
 				insertPegFirstRow = true;
 			}
 		}
@@ -54,26 +50,6 @@ $(".default-level-btn").click(function() {
 	$(".next-level, .last-level").css("display", "none");
 });
 
-//Game over function
-$("#checkBtn").on("click", function() {
-	attempts += 1;
-	if (attempts >= 10) {
-		if (confirm("GAME OVER! Want to play again?") == true) {
-			window.location.reload();
-			return;
-		} else {
-			return;
-		}
-	}
-});
-
-// var choice = $(".choices").each(function() {
-// 	$(this).click(function(e) {
-// 		userChoices.push(colors[$(this).index()]);
-// 		console.log(userChoices);
-// 	});
-// });
-
 var choice = $(".choices").each(function() {
 	$(this).click(function() {
 		var index = [$(this).index()];
@@ -87,5 +63,34 @@ $("td").on("click", function() {
 	var position = element.index();
 	element.addClass("filled " + colorPicked);
 	userChoices[position] = colorPicked;
-	console.log(userChoices);
+	if (userChoices.length == difficultyLevel) {
+		var pegsArray = compareCodes(masterCode, userChoices);
+		pegsArray.forEach(function(pegColor) {
+			if (pegColor === "blackPeg") {
+				$(".pegspace")
+					.css("background-image", "none")
+					.addClass("pegColorBlack");
+			} else if (pegColor === "whitePeg") {
+				$(".pegspace")
+					.css("background-image", "none")
+					.addClass("pegColorWhite");
+			} else {
+				return;
+			}
+		});
+	}
+});
+
+//Game over function
+$("#checkBtn").on("click", function() {
+	attempts += 1;
+	compareCodes(masterCode, userChoices);
+	if (attempts >= 10) {
+		if (confirm("GAME OVER! Want to play again?") == true) {
+			window.location.reload();
+			return;
+		} else {
+			return;
+		}
+	}
 });

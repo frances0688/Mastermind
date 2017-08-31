@@ -87,11 +87,6 @@ button {
 	padding: 25px;
 }
 
-.pegspace {
-	opacity: 0.6;
-	width: 15px;
-}
-
 #choices-board {
 	padding: 15px;
 	position: fixed;
@@ -108,17 +103,41 @@ button {
 	height: 50px;
 	width: 50px;
 	outline: 0;
-	border: 2px solid white;
 	border-radius: 50%;
 }
+.choices:active {
+	border: 2px solid white;
+}
 
+.pegspace,
 .space {
 	background-color: transparent;
 	border: none;
+	border-radius: 50%;
 	background-image: url("img/black circle.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	opacity: 0.6;
+}
+
+.pegspace {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border: 1px solid black;
+}
+
+.pegspace.pegColorBlack {
+	background-color: black;
+	opacity: 1;
+}
+
+.pegspace.pegColorWhite {
+	background-color: white;
+	opacity: 1;
+}
+
+.space {
 	width: 50px;
 	height: 50px;
 }

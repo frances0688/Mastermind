@@ -26,9 +26,7 @@ var cats = [
 ];
 
 var difficultyLevel = 4;
-
 var masterCode = [];
-
 var userChoices = [];
 
 // Default game status
@@ -80,6 +78,6 @@ function compareCodes(masterCode, userChoices) {
 function winGame(masterCode, userChoices) {
 	var allBlack = _.uniq(compareCodes(masterCode, userChoices));
 	if (allBlack.length === 1 && allBlack[0] == "blackPeg") {
-		console.log("You Won, betch!");
+		alert("You Won, betch!");
 	}
 }
