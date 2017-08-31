@@ -16,6 +16,8 @@ h1 {
 .difficulty {
 	margin-bottom: 40px;
 	text-align: center;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 20px;
 }
 
 content {
