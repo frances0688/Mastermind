@@ -52,6 +52,7 @@ $(".default-level-btn").click(function() {
 	$(".next-level, .last-level").css("display", "none");
 });
 
+// Places choice in selected spot
 var choice = $(".choices").each(function() {
 	$(this).click(function() {
 		var index = [$(this).index()];
@@ -69,7 +70,7 @@ $("td").on("click", function() {
 		element.addClass("filled " + colorPicked);
 		userChoices[position] = colorPicked;
 		if (userChoices.length == difficultyLevel) {
-			document.getElementById("checkBtn").disabled = false;
+			checkBtn.disabled = false;
 		}
 	} else {
 		return;
@@ -93,12 +94,12 @@ $("#checkBtn").click(function() {
 
 		// show Pegs
 		drawPegs();
+		winGame(masterCode, userChoices);
 	}
 });
 
 function drawPegs() {
 	var pegsArray = compareCodes(masterCode, userChoices);
-	console.log(pegsArray);
 	var pegSelector;
 	var currentPegsRow = attempts - 1;
 	var i;
@@ -107,7 +108,6 @@ function drawPegs() {
 	pegsArray.forEach(function(pegColor, index) {
 		i = index + 1;
 		if (difficultyLevel % 2 === 0) {
-			console.log("im even !!!");
 			if (i <= difficultyLevel / 2) {
 				blockname = ".firstRowPeg";
 				pegSelector = $(
@@ -133,8 +133,6 @@ function drawPegs() {
 				);
 			}
 		}
-
-		console.log(pegSelector);
 		if (pegColor === "blackPeg") {
 			pegSelector.css("background-image", "none").addClass("pegColorBlack");
 		} else if (pegColor === "whitePeg") {
@@ -174,7 +172,28 @@ $("#cats-btn").on("click", function() {
 	$("html, .difficulty>button, #checkBtn").css("font-family", "Poiret One");
 	$("html, .difficulty>button, #checkBtn").css("font-size", "35px");
 	$(".choices").css("background-image", "url('img/cats-spritesheet.png')");
+	$(".choices").css("background-size", "60px");
 	$(".choices, .space").css("height", "60px");
 	$(".choices, .space").css("width", "60px");
 	$(".choices, .space").css("border-radius", 0);
+	$(".space.red, #red-sphere").css("background-position-x", "0");
+	$(".space.red, #red-sphere").css("background-position-y", "0");
+	$(".space.blue, #blue-sphere").css("background-position-x", "0");
+	$(".space.blue, #blue-sphere").css("background-position-y", "-65px");
+	$(".space.yellow, #yellow-sphere").css("background-position-x", "0");
+	$(".space.yellow, #yellow-sphere").css("background-position-y", "-133px");
+	$(".space.green, #green-sphere").css("background-position-x", "0");
+	$(".space.green, #green-sphere").css("background-position-y", "-193px");
+	$(".space.orange, #orange-sphere").css("background-position-x", "0");
+	$(".space.orange, #orange-sphere").css("background-position-y", "-636px");
+	$(".space.purple, #purple-sphere").css("background-position-x", "0");
+	$(".space.purple, #purple-sphere").css("background-position-y", "-372px");
+	$(".space.magenta, #magenta-sphere").css("background-position-x", "0");
+	$(".space.magenta, #magenta-sphere").css("background-position-y", "-439px");
+	$(".space.cyan, #cyan-sphere").css("background-position-x", "0");
+	$(".space.cyan, #cyan-sphere").css("background-position-y", "-507px");
+	$(".space.white, #white-sphere").css("background-position-x", "0");
+	$(".space.white, #white-sphere").css("background-position-y", "-573px");
+	$(".space.black, #black-sphere").css("background-position-x", "0");
+	$(".space.black, #black-sphere").css("background-position-y", "-259px");
 });

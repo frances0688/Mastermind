@@ -61,18 +61,43 @@ function masterCodeGenerator(difficultyLevel, items) {
 // Compare each item in user choices with the generated master code
 function compareCodes(masterCode, userChoices) {
 	var pegs = [];
-	var masterIndex;
-	for (i = 0; i < difficultyLevel; i++) {
-		masterIndex = _.indexOf(masterCode, userChoices[i]);
-		if (masterIndex == i) {
+	var checked = masterCode.map(function(code) {
+		return { code: code, checked: false };
+	});
+
+	// Check black pegs first
+	userChoices.forEach(function(choice, index) {
+		if (masterCode[index] === choice) {
 			pegs.push("blackPeg");
-		} else if (masterIndex > -1) {
+			checked[index].checked = true;
+		}
+	});
+
+	// Check the remaining codes for white pegs;
+	userChoices.forEach(function(choice, index) {
+		if (checked[index].checked) {
+			return;
+		}
+
+		if (containsUniqueChoice(checked, choice)) {
 			pegs.push("whitePeg");
 		} else {
 			pegs.push(null);
 		}
-	}
+	});
+
 	return _.shuffle(pegs);
+}
+
+function containsUniqueChoice(checked, choice) {
+	var unchecked = _.filter(checked, { checked: false });
+	var matchedChoice = _.find(unchecked, { code: choice });
+
+	if (matchedChoice) {
+		matchedChoice.checked = true;
+	}
+
+	return !!matchedChoice;
 }
 
 // Testing win conditions: after comparing codes, receive an array of all black pegs
