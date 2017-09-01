@@ -1,0 +1,84 @@
+.numbers.matt {
+	background-image: url("../img/neon.jpg");
+	background-size: cover;
+}
+
+.numbers h1 {
+	color: rgba(61, 248, 32, 0.81);
+}
+
+.numbers .game-board {
+	background-image: none;
+	background-color: rgba(11, 127, 243, 0.81);
+	border: 1px solid rgba(61, 248, 32, 0.81);
+}
+
+.numbers .choices {
+	background-image: url("../img/numbers-spritesheet.png");
+	background-size: 60px;
+	height: 60px;
+	width: 60px;
+	border-radius: 0;
+}
+
+.numbers .space {
+	width: 60px;
+	height: 60px;
+	border: 1px solid rgba(61, 248, 32, 0.81);
+}
+
+.numbers .space.filled {
+	background-image: url("../img/numbers-spritesheet.png");
+	background-size: 60px;
+	opacity: 1;
+}
+
+.space.zero,
+.numbers #red-sphere {
+	background-position: 0 -65px;
+}
+
+.space.one,
+.numbers #blue-sphere {
+	background-position: 0 -127px;
+}
+
+.space.two,
+.numbers #yellow-sphere {
+	background-position: 0 -190px;
+}
+
+.space.three,
+.numbers #green-sphere {
+	background-position: 0 -254px;
+}
+
+.space.four,
+.numbers #orange-sphere {
+	background-position: 0 -316px;
+}
+
+.space.five,
+.numbers #purple-sphere {
+	background-position: 0 -379px;
+}
+
+.space.six,
+.numbers #magenta-sphere {
+	background-position: 0 -443px;
+}
+
+.space.seven,
+.numbers #cyan-sphere {
+	background-position: 0 -507px;
+}
+
+.space.eight,
+.numbers #white-sphere {
+	background-position: 0 0;
+}
+
+.space.nine,
+.numbers #black-sphere {
+	background-position: 0 -571px;
+}

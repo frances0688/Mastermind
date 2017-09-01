@@ -1,0 +1,77 @@
+.classic.matt {
+	background-image: url("../img/sand.jpg");
+	background-size: cover;
+}
+
+.classic .game-board {
+	background-image: url("../img/wood.jpg");
+}
+
+.classic .choices {
+	background-image: url("../img/spheres-spritesheet.png");
+	background-size: 200px;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+}
+
+.classic .space {
+	width: 50px;
+	height: 50px;
+}
+
+.classic .space.filled {
+	background-image: url("../img/spheres-spritesheet.png");
+	background-size: 200px;
+	opacity: 1;
+}
+
+.space.red,
+.classic #red-sphere {
+	background-position: -78px -210px;
+}
+
+.space.blue,
+.classic #blue-sphere {
+	background-position: -10px -11px;
+}
+
+.space.yellow,
+.classic #yellow-sphere {
+	background-position: -10px -77px;
+}
+
+.space.green,
+.classic #green-sphere {
+	background-position: -144px -144px;
+}
+
+.space.orange,
+.classic #orange-sphere {
+	background-position: -77px -144px;
+}
+
+.space.purple,
+.classic #purple-sphere {
+	background-position: -10px -144px;
+}
+
+.space.magenta,
+.classic #magenta-sphere {
+	background-position: -77px -77px;
+}
+
+.space.cyan,
+.classic #cyan-sphere {
+	background-position: -144px -10px;
+}
+
+.space.white,
+.classic #white-sphere {
+	background-position: -77px -10px;
+}
+
+.space.black,
+.classic #black-sphere {
+	background-position: -144px -77px;
+}

@@ -10,7 +10,18 @@ var colors = [
 	"white",
 	"black"
 ];
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var numbers = [
+	"zero",
+	"one",
+	"two",
+	"three",
+	"four",
+	"five",
+	"six",
+	"seven",
+	"eight",
+	"nine"
+];
 
 var cats = [
 	"cat1",
@@ -58,8 +69,8 @@ function compareCodes(masterCode, userChoices) {
 	var masterChecked = masterCode.map(function(code) {
 		return { code: code, checked: false };
 	});
-	var userChecked = userChoices.map(function (code) {
-    return { code: code, checked: false };
+	var userChecked = userChoices.map(function(code) {
+		return { code: code, checked: false };
 	});
 
 	// Check black pegs first

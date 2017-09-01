@@ -16,6 +16,7 @@ h1 {
 .difficulty {
 	margin-bottom: 40px;
 	text-align: center;
+	vertical-align: middle;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 20px;
 }
@@ -62,9 +63,9 @@ button {
 
 #numbers-btn {
 	border: 3px solid magenta;
-	background-color: #3becb1;
+	background-color: rgba(61, 248, 32, 0.81);
 	font-family: "Orbitron", sans-serif;
-	font-size: 35px;
+	font-size: 30px;
 }
 
 #cats-btn {
@@ -105,7 +106,7 @@ button {
 	background-color: transparent;
 	border: none;
 	border-radius: 50%;
-	background-image: url("img/black circle.png");
+	background-image: url("../img/black circle.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	opacity: 0.6;
