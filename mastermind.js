@@ -1,10 +1,23 @@
 // Variables
 var insertPegFirstRow = true;
-var checkBtn = document.getElementById("checkBtn");
+var checkBtn;
 var attempts = 1;
-var colorPicked;
-$(".space").addClass("blocked");
-$('tr[row="' + attempts + '"] .space').removeClass("blocked");
+var selected;
+var mode = 'classic';
+var choices = colors;
+
+// Default game status
+$(document).ready(function() {
+  masterCodeGenerator(difficultyLevel, choices);
+  checkBtn = document.getElementById("checkBtn");
+  checkBtn.disabled = true;
+  $(".space").on("click", setUserChoice);
+  // Places choice in selected spot
+  $(".choices").click(function() {
+      var index = [$(this).index()];
+      selected = choices[index];
+    });
+});
 
 //Expands game board according to difficulty level
 $(".difficulty > button").click(function(event) {
@@ -12,7 +25,7 @@ $(".difficulty > button").click(function(event) {
 	var newColumns = futureLevel - difficultyLevel;
 	if (newColumns >= 0) {
 		for (i = 0; i < newColumns; i++) {
-			$("<td class='space'></td>").insertAfter(
+			$('<td class="space '+ mode +'"></td>').insertAfter(
 				"#main-game > tbody > tr > td:nth-child(" + difficultyLevel + ")"
 			);
 			if (insertPegFirstRow) {
@@ -36,6 +49,8 @@ $(".difficulty > button").click(function(event) {
 		}
 	}
 	difficultyLevel = futureLevel;
+	masterCodeGenerator(difficultyLevel, choices);
+	$('.space').off('click').click(setUserChoice);
 });
 
 // Expands amount of elements to choose from according to difficulty level
@@ -52,94 +67,67 @@ $(".default-level-btn").click(function() {
 	$(".next-level, .last-level").css("display", "none");
 });
 
-// Places choice in selected spot
-var choice = $(".choices").each(function() {
-	$(this).click(function() {
-		var index = [$(this).index()];
-		colorPicked = colors[index];
-		console.log(colors[index]);
-	});
-});
+function setUserChoice() {
+  var element = $(this);
+  var position = element.index();
+  var row = element.parent();
 
-$("td").on("click", function() {
-	var element = $(this);
-	var position = element.index();
-	var row = element.parent();
-
-	if (checkRigthRow(row.attr("row"))) {
-		element.addClass("filled " + colorPicked);
-		userChoices[position] = colorPicked;
-		if (userChoices.length == difficultyLevel) {
-			checkBtn.disabled = false;
-		}
-	} else {
-		return;
-	}
-});
-
-function checkRigthRow(rowNumber) {
-	if (parseInt(rowNumber) === attempts) {
-		return true;
-	} else {
-		return false;
-	}
+  if (parseInt(row.attr("row")) === attempts) {
+    element.addClass("filled " + selected);
+    userChoices[position] = selected;
+    if (userChoices.length === difficultyLevel) {
+      checkBtn.disabled = false;
+    }
+  }
 }
 
 $("#checkBtn").click(function() {
 	if (!gameOver()) {
 		// Update current row
-		$('tr[row="' + attempts + '"] .space').addClass("blocked");
 		attempts++;
-		$('tr[row="' + attempts + '"] .space').removeClass("blocked");
 
 		// show Pegs
 		drawPegs();
+
+		// disable check button
+		checkBtn.disabled = true;
+
 		winGame(masterCode, userChoices);
+
+		// reset user choices;
+		userChoices = [];
 	}
 });
 
 function drawPegs() {
 	var pegsArray = compareCodes(masterCode, userChoices);
-	var pegSelector;
 	var currentPegsRow = attempts - 1;
-	var i;
-	var i2 = 0;
-	var blockname;
+  var pegTable = $('tr[row="'+ currentPegsRow +'"] table');
+  var firstRowLength = Math.ceil(difficultyLevel / 2);
+	var pegClass;
+	var peg;
 	pegsArray.forEach(function(pegColor, index) {
-		i = index + 1;
-		if (difficultyLevel % 2 === 0) {
-			if (i <= difficultyLevel / 2) {
-				blockname = ".firstRowPeg";
-				pegSelector = $(
-					'tr[row="' +
-						currentPegsRow +
-						'"] ' +
-						blockname +
-						" .pegspace:nth-child(" +
-						i +
-						")"
-				);
-			} else {
-				i2++;
-				blockname = ".secondRowPeg";
-				pegSelector = $(
-					'tr[row="' +
-						currentPegsRow +
-						'"] ' +
-						blockname +
-						" .pegspace:nth-child(" +
-						i2 +
-						")"
-				);
-			}
-		}
-		if (pegColor === "blackPeg") {
-			pegSelector.css("background-image", "none").addClass("pegColorBlack");
-		} else if (pegColor === "whitePeg") {
-			pegSelector.css("background-image", "none").addClass("pegColorWhite");
-		} else {
+
+		if (pegColor === null) {
 			return;
 		}
+
+		switch (pegColor) {
+			case 'blackPeg':
+				pegClass = 'pegColorBlack';
+				break;
+			case 'whitePeg':
+				pegClass = 'pegColorWhite';
+				break;
+		}
+
+		if (index < firstRowLength) {
+			peg = pegTable.find('.firstRowPeg .pegspace:nth-child('+ (index + 1) +')');
+		} else {
+      peg = pegTable.find('.secondRowPeg .pegspace:nth-child('+ (index - firstRowLength + 1) +')');
+		}
+
+    peg.css('background-image', 'none').addClass(pegClass);
 	});
 }
 
@@ -147,13 +135,19 @@ function gameOver() {
 	if (attempts > 10) {
 		if (confirm("GAME OVER! Want to play again?") == true) {
 			window.location.reload();
-			return;
-		} else {
-			return;
 		}
-	} else {
-		return false;
 	}
+}
+
+// Testing win conditions: after comparing codes, receive an array of all black pegs
+function winGame(masterCode, userChoices) {
+  var allBlack = _.uniq(compareCodes(masterCode, userChoices));
+  if (allBlack.length === 1 && allBlack[0] == "blackPeg") {
+  	$('#mastercode > td').each(function(index){
+  		$(this).addClass('filled ' + masterCode[index]);
+		});
+    alert("You Won, betch!");
+  }
 }
 
 // MODE BUTTONS
@@ -167,33 +161,12 @@ $("#numbers-btn").on("click", function() {});
 
 // CATS!
 $("#cats-btn").on("click", function() {
-	$(".classic").css("background-image", "url('img/grass.jpg')");
-	$(".game-board").css("background-image", "url('img/fur.jpg')");
+	$('body').removeClass('classic').addClass('cats');
+	choices = cats;
+	masterCodeGenerator(difficultyLevel, choices);
+	userChoices = [];
+
 	$("html, .difficulty>button, #checkBtn").css("font-family", "Poiret One");
 	$("html, .difficulty>button, #checkBtn").css("font-size", "35px");
-	$(".choices").css("background-image", "url('img/cats-spritesheet.png')");
-	$(".choices").css("background-size", "60px");
-	$(".choices, .space").css("height", "60px");
-	$(".choices, .space").css("width", "60px");
-	$(".choices, .space").css("border-radius", 0);
-	$(".space.red, #red-sphere").css("background-position-x", "0");
-	$(".space.red, #red-sphere").css("background-position-y", "0");
-	$(".space.blue, #blue-sphere").css("background-position-x", "0");
-	$(".space.blue, #blue-sphere").css("background-position-y", "-65px");
-	$(".space.yellow, #yellow-sphere").css("background-position-x", "0");
-	$(".space.yellow, #yellow-sphere").css("background-position-y", "-133px");
-	$(".space.green, #green-sphere").css("background-position-x", "0");
-	$(".space.green, #green-sphere").css("background-position-y", "-193px");
-	$(".space.orange, #orange-sphere").css("background-position-x", "0");
-	$(".space.orange, #orange-sphere").css("background-position-y", "-636px");
-	$(".space.purple, #purple-sphere").css("background-position-x", "0");
-	$(".space.purple, #purple-sphere").css("background-position-y", "-372px");
-	$(".space.magenta, #magenta-sphere").css("background-position-x", "0");
-	$(".space.magenta, #magenta-sphere").css("background-position-y", "-439px");
-	$(".space.cyan, #cyan-sphere").css("background-position-x", "0");
-	$(".space.cyan, #cyan-sphere").css("background-position-y", "-507px");
-	$(".space.white, #white-sphere").css("background-position-x", "0");
-	$(".space.white, #white-sphere").css("background-position-y", "-573px");
-	$(".space.black, #black-sphere").css("background-position-x", "0");
-	$(".space.black, #black-sphere").css("background-position-y", "-259px");
+
 });

@@ -29,12 +29,6 @@ var difficultyLevel = 4;
 var masterCode = [];
 var userChoices = [];
 
-// Default game status
-$(document).ready(function() {
-	masterCodeGenerator(difficultyLevel, colors);
-	document.getElementById("checkBtn").disabled = true;
-});
-
 function getRandom(items) {
 	return Math.floor(Math.random() * items.length);
 }
@@ -61,25 +55,29 @@ function masterCodeGenerator(difficultyLevel, items) {
 // Compare each item in user choices with the generated master code
 function compareCodes(masterCode, userChoices) {
 	var pegs = [];
-	var checked = masterCode.map(function(code) {
+	var masterChecked = masterCode.map(function(code) {
 		return { code: code, checked: false };
+	});
+	var userChecked = userChoices.map(function (code) {
+    return { code: code, checked: false };
 	});
 
 	// Check black pegs first
 	userChoices.forEach(function(choice, index) {
 		if (masterCode[index] === choice) {
 			pegs.push("blackPeg");
-			checked[index].checked = true;
+			masterChecked[index].checked = true;
+			userChecked[index].checked = true;
 		}
 	});
 
 	// Check the remaining codes for white pegs;
 	userChoices.forEach(function(choice, index) {
-		if (checked[index].checked) {
+		if (masterChecked[index].checked && userChecked[index].checked) {
 			return;
 		}
 
-		if (containsUniqueChoice(checked, choice)) {
+		if (containsUniqueChoice(masterChecked, choice)) {
 			pegs.push("whitePeg");
 		} else {
 			pegs.push(null);
@@ -98,12 +96,4 @@ function containsUniqueChoice(checked, choice) {
 	}
 
 	return !!matchedChoice;
-}
-
-// Testing win conditions: after comparing codes, receive an array of all black pegs
-function winGame(masterCode, userChoices) {
-	var allBlack = _.uniq(compareCodes(masterCode, userChoices));
-	if (allBlack.length === 1 && allBlack[0] == "blackPeg") {
-		alert("You Won, betch!");
-	}
 }

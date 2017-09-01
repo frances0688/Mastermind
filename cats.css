@@ -1,0 +1,77 @@
+.cats.matt {
+    background-image: url('img/grass.jpg');
+    background-size: cover;
+}
+
+.cats .game-board {
+    background-image: url('img/fur.jpg');
+}
+
+.cats .choices {
+    background-image: url('img/cats-spritesheet.png');
+    background-size: 60px;
+    height: 60px;
+    width: 60px;
+    border-radius: 0;
+}
+
+.cats .space {
+    width: 60px;
+    height: 60px;
+}
+
+.cats .space.filled {
+    background-image: url('img/cats-spritesheet.png');
+    background-size: 60px;
+    opacity: 1;
+}
+
+.space.cat1,
+.cats #red-sphere {
+    background-position: 0 0;
+}
+
+.space.cat2,
+.cats #blue-sphere {
+    background-position: 0 -65px;
+}
+
+.space.cat3,
+.cats #yellow-sphere {
+    background-position: 0 -133px;
+}
+
+.space.cat4,
+.cats #green-sphere {
+    background-position: 0 -193px;
+}
+
+.space.cat5,
+.cats #orange-sphere {
+    background-position: 0 -636px;
+}
+
+.space.cat6,
+.cats #purple-sphere {
+    background-position: 0 -372px;
+}
+
+.space.cat7,
+.cats #magenta-sphere {
+    background-position: 0 -439px;
+}
+
+.space.cat8,
+.cats #cyan-sphere {
+    background-position: 0 -507px;
+}
+
+.space.cat9,
+.cats #white-sphere {
+    background-position: 0 -573px;
+}
+
+.space.cat10,
+.cats #black-sphere {
+    background-position: 0 -259px;
+}

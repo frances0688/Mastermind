@@ -74,15 +74,9 @@ button {
 	font-size: 35px;
 }
 
-.classic {
-	background-image: url("img/sand.jpg");
-	background-size: cover;
-}
-
 .game-board {
 	width: fit-content;
 	border-radius: 20px;
-	background-image: url("img/wood.jpg");
 }
 
 #main-game {
@@ -99,13 +93,8 @@ button {
 	margin: 0 7px;
 	background-color: transparent;
 	border: none;
-	background-image: url("img/spheres-spritesheet.png");
 	background-repeat: no-repeat;
-	background-size: 200px;
-	height: 50px;
-	width: 50px;
 	outline: 0;
-	border-radius: 50%;
 }
 .choices:active {
 	border: 2px solid white;
@@ -137,67 +126,6 @@ button {
 .pegspace.pegColorWhite {
 	background-color: white;
 	opacity: 1;
-}
-
-.space {
-	width: 50px;
-	height: 50px;
-}
-
-.space.filled {
-	background-image: url("img/spheres-spritesheet.png");
-	background-size: 200px;
-	opacity: 1;
-}
-
-.space.red,
-#red-sphere {
-	background-position: -78px -210px;
-}
-
-.space.blue,
-#blue-sphere {
-	background-position: -10px -11px;
-}
-
-.space.yellow,
-#yellow-sphere {
-	background-position: -10px -77px;
-}
-
-.space.green,
-#green-sphere {
-	background-position: -144px -144px;
-}
-
-.space.orange,
-#orange-sphere {
-	background-position: -77px -144px;
-}
-
-.space.purple,
-#purple-sphere {
-	background-position: -10px -144px;
-}
-
-.space.magenta,
-#magenta-sphere {
-	background-position: -77px -77px;
-}
-
-.space.cyan,
-#cyan-sphere {
-	background-position: -144px -10px;
-}
-
-.space.white,
-#white-sphere {
-	background-position: -77px -10px;
-}
-
-.space.black,
-#black-sphere {
-	background-position: -144px -77px;
 }
 
 .next-level,
