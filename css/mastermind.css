@@ -21,6 +21,15 @@ h1 {
 	border-radius: 20px;
 }
 
+p {
+	margin: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
 content {
 	display: flex;
 	justify-content: center;
@@ -78,6 +87,12 @@ button {
 .game-board {
 	width: fit-content;
 	border-radius: 20px;
+}
+
+#mastercode {
+	font-size: 35px;
+	color: white;
+	text-align: center;
 }
 
 #main-game {

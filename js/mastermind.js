@@ -157,6 +157,7 @@ function winGame(masterCode, userChoices) {
 	var allBlack = _.uniq(compareCodes(masterCode, userChoices));
 	if (allBlack.length === 1 && allBlack[0] == "blackPeg") {
 		$("#mastercode > td").each(function(index) {
+			$(this).text("");
 			$(this).addClass("filled " + masterCode[index]);
 		});
 		alert("Congratulations! You Won!");
